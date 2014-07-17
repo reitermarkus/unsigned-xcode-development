@@ -16,8 +16,6 @@ xcode-setup
 1. open Xcode preferences and select the __Downloads__ tab
 2. install the __Command Line Tools__
 3. open Terminal and execute the following commands:
-
-
 ```applescript
 mkdir -p ~/Documents/Git/
 cd ~/Documents/Git/
