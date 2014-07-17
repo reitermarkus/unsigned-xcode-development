@@ -3,19 +3,20 @@ xcode-setup
 
 #Preparing Xcode To Allow Building Unsigned iOS Applications & Installing ldid Utility
 
+## Disable Code Signing Requirement
+
 1. navigate to __/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS#.#.sdk/__
 2. open __SDKSettings.plist__
 3. expand the section `DefaultProperties`
 4. set the value of `CODE_SIGNING_REQUIRED` to `NO`
 5. restart Xcode
 
-## Disable Code Signing Requirement
+## Install Saurik's ldid utility
 
 6. open Xcode preferences and select the "Downloads" tab
 7. click the "Install" button next to "Command Line Tools"
 8. open Terminal on the OSX system where the application will be built
 
-## Install Saurik's ldid utility:
 
 ```applescript
 mkdir -p ~/Documents/Git/
