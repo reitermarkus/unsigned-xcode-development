@@ -1,7 +1,86 @@
 xcode-setup
 ===========
 
+Preparing Xcode To Allow Building Unsigned iOS Applications & Installing ldid Utility:
+Open Finder and navigate to the "/Applications/" directory.
+Right-click the application "Xcode" and select "Show Package Contents".
 
+
+
+Navigate to the directory:
+"Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/".
+Copy "SDKSettings.plist" to the desktop and open it with Xcode.
+Expand the section "DefaultProperties".
+Change the property value of "CODE_SIGNING_REQUIRED" from "YES" to "NO".
+
+Disable Code Signing Requirement
+
+Save the file and copy it back to the directory: "/Applications/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/"
+Restart Xcode.
+Open Xcode preferences and select the "Downloads" tab.
+Click the "Install" button next to "Command Line Tools".
+Open Terminal on the OSX system where the application will be built.
+Install Saurik's ldid utility:
+
+# mkdir -p ~/Documents/Git/
+# cd ~/Documents/Git/
+# git clone git://git.saurik.com/ldid.git
+# cd ldid
+# git submodule update --init
+# ./make.sh
+# sudo cp ldid /usr/bin/
+Note: The above steps only need to be performed once. After Xcode is properly prepared and ldid is installed, only the following steps will need to be repeated for building unsigned applications and installing them to a device.
+
+
+Building An Unsigned Application In Xcode:
+Open the project in Xcode which is to be run on a non-provisioned iOS device.
+At the top of the Project Navigator, select the project.
+
+Select Project
+
+In the "Code Signing" section, select "Don't Code Sign" for "Code Signing Identity".
+
+Disable CodeSigning
+
+Ensure the Build Destination is set to "iOS Device".
+
+Build Destination
+
+
+Build the application (⌘-B).
+
+Add Required SHA1 Hashes To Application Binary:
+In the Xcode Project Navigator, expand the section "Products".
+Right-click the application binary (HelloWorld.app) and select "Show In Finder".
+
+Show In Finder
+
+Copy the application binary to the desktop.
+Open Terminal on the OSX system where the application was built.
+Add the SHA1 hashes to the application binary:
+
+```applescript
+# cd ~/Desktop/
+# ldid -S HelloWorld.app/HelloWorld
+```
+Copy Application To Device and Reload UI Cache:
+Open Terminal on the OSX system where the application was built.
+Change to the desktop directory where the application was copied and use the scp utility to copy the application to the device:
+```applescript
+# cd ~/Desktop/
+# scp -r HelloWorld.app/ root@192.168.1.161:/Applications/
+```
+Connect to the device via SSH, login as the user 'mobile', rebuild the UI cache, and re-spring the device:
+```applescript
+# ssh -l mobile 192.168.1.161
+# uicache
+# killall backboardd
+```
+Note: The backboardd process can be replaced with SpringBoard for iOS versions prior to 6.0. Using SpringBoard for iOS6+ will still work, but the screen will be dimmed. Pressing the power button once then waking the device back up will bring brightness back to the previous setting.
+
+Note: The IP address shown in the above commands (192.168.1.161) should be replaced with the IP address of the iOS device being used. This can be obtained within the iOS Settings app by tapping the arrow icon next to the WiFi Access Point the device is connected to. Before running the above commands, OpenSSH must be installed and enabled on the device.
+
+After performing the above steps, your application should now be visible on the device's SpringBoard. I have read that the ldid command and scp procedure can be added to a script so it's automatically performed every time a build is completed in Xcode. Once I figure out how to do this, the above guide will be revised.
 
 
 # Script to sign and sync App to iOS Device
