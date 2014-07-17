@@ -2,7 +2,7 @@ xcode-setup
 ===========
 
 Preparing Xcode To Allow Building Unsigned iOS Applications & Installing ldid Utility:
-Open Finder and navigate to the "/Applications/" directory.
+Open Finder and navigate to the __"/Applications/"__ directory.
 Right-click the application "Xcode" and select "Show Package Contents".
 
 
