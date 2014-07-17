@@ -6,6 +6,8 @@ xcode-setup
 
 # Script to sign and sync App to iOS Device
 
+
+    ```bash
     #!/bin/sh
 
     # Modify this to your device's IP address.
