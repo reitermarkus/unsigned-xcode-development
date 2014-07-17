@@ -11,9 +11,9 @@ Navigate to the directory:
 "Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/".
 Copy "SDKSettings.plist" to the desktop and open it with Xcode.
 Expand the section "DefaultProperties".
-Change the property value of "CODE_SIGNING_REQUIRED" from "YES" to "NO".
+Change the property value of _"CODE_SIGNING_REQUIRED"_ from _"YES"_ to _"NO"_.
 
-Disable Code Signing Requirement
+# Disable Code Signing Requirement
 
 Save the file and copy it back to the directory: "/Applications/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.1.sdk/"
 Restart Xcode.
