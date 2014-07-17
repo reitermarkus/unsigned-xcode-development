@@ -13,9 +13,9 @@ xcode-setup
 
 ## Install Saurik's ldid utility
 
-6. open Xcode preferences and select the "Downloads" tab
-7. click the "Install" button next to "Command Line Tools"
-8. open Terminal on the OSX system where the application will be built
+1. open Xcode preferences and select the __Downloads__ tab
+2. install the __Command Line Tools__
+3. open Terminal and execute the following commands:
 
 
 ```applescript
