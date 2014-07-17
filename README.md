@@ -34,3 +34,4 @@ xcode-setup
       /Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Build fertig" -message "${CFBundleIdentifier} wurde auf ${IP} installiert."
 
     fi
+    ```
