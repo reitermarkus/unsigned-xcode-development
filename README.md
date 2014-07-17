@@ -8,7 +8,6 @@ xcode-setup
 
     #!/bin/sh
 
-
     # Modify this to your device's IP address.
     IP="10.0.0.31"
     
