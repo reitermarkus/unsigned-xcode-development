@@ -32,4 +32,4 @@ xcode-setup
       # You can get terminal-notifier from https://github.com/alloy/terminal-notifier.
       /Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Build fertig" -message "${CFBundleIdentifier} wurde auf ${IP} installiert."
 
-fi
+    fi
