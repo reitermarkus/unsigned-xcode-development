@@ -23,13 +23,13 @@ Open Terminal on the OSX system where the application will be built.
 Install Saurik's ldid utility:
 
 ```applescript
-# mkdir -p ~/Documents/Git/
-# cd ~/Documents/Git/
-# git clone git://git.saurik.com/ldid.git
-# cd ldid
-# git submodule update --init
-# ./make.sh
-# sudo cp ldid /usr/bin/
+mkdir -p ~/Documents/Git/
+cd ~/Documents/Git/
+git clone git://git.saurik.com/ldid.git
+cd ldid
+git submodule update --init
+./make.sh
+sudo cp ldid /usr/bin/
 ```
 
 Note: The above steps only need to be performed once. After Xcode is properly prepared and ldid is installed, only the following steps will need to be repeated for building unsigned applications and installing them to a device.
