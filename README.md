@@ -3,8 +3,7 @@ xcode-setup
 
 #Preparing Xcode To Allow Building Unsigned iOS Applications & Installing ldid Utility
 
-__/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS#.#.sdk/__.
-Open __SDKSettings.plist__, expand the section `DefaultProperties` and change the property value of `CODE_SIGNING_REQUIRED` from `YES`to `NO`.
+Navigate to __/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS#.#.sdk/__, open __SDKSettings.plist__, expand the section `DefaultProperties` and change the property value of `CODE_SIGNING_REQUIRED` from `YES`to `NO`.
 
 # Disable Code Signing Requirement
 
