@@ -7,7 +7,7 @@ xcode-setup
 # Script to sign and sync App to iOS Device
 
 
-    ```applescript
+```applescript
     #!/bin/sh
 
     # Modify this to your device's IP address.
@@ -34,4 +34,4 @@ xcode-setup
       /Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Build fertig" -message "${CFBundleIdentifier} wurde auf ${IP} installiert."
 
     fi
-    ```
+```
