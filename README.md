@@ -9,7 +9,9 @@ xcode-setup
 2. Open __SDKSettings.plist__.
 3. Expand the section `DefaultProperties`.
 4. Set the value of `CODE_SIGNING_REQUIRED` to `NO`.
-5. Restart Xcode.
+5. Set the value of `ENTITLEMENTS_REQUIRED` to `NO`.
+6. Set the value of `AD_HOC_CODE_SIGNING_ALLOWED` to `YES`.
+7. Restart Xcode.
 
 ## Install Saurik's ldid utility
 
