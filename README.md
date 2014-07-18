@@ -69,13 +69,20 @@ Note: The IP address shown in the above commands (192.168.1.161) should be repla
 After performing the above steps, your application should now be visible on the device's SpringBoard. I have read that the ldid command and scp procedure can be added to a script so it's automatically performed every time a build is completed in Xcode. Once I figure out how to do this, the above guide will be revised.
 
 
+## Prepare your iOS Device
+
+1. Install __OpenSSH__ and __Open__ from Cydia.
+2. Set up up a private key to ssh into your iOS Device. (http://www.priyaontech.com/2012/01/ssh-into-your-jailbroken-idevice-without-a-password/)[How-to]
+
+
+
+
 ## Script to sign and sync App to iOS Device
 
 1. Open the __Build Phases__ tab of your project.
 2. Add the following script.
 3. Change the `IP` to your iPhone's IP address.
 4. Change the `BUNDLE_ID` to your iPhone's bundle Identifier.
-5. Install __Open__ from Cydia in order for the open command to work.
 
 ```applescript
 #!/bin/sh
