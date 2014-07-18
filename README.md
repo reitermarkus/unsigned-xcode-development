@@ -91,8 +91,8 @@ ssh-add -K ~/.ssh/id_dsa
 #!/bin/sh
 
 # Modify this to your device's IP address.
-IP="10.0.0.31"
-BUNDLE_ID="reitermarkus.Crystal-Ball"
+IP="10.0.0.###"
+BUNDLE_ID="com.developer.App"
     
 # Verify that the build is for iOS Device and not a Simulator.
 if [ "$NATIVE_ARCH" != "i386" ]; then
