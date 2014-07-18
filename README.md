@@ -44,21 +44,21 @@ Open Terminal on the OSX system where the application was built.
 Add the SHA1 hashes to the application binary:
 
 ```applescript
-# cd ~/Desktop/
-# ldid -S HelloWorld.app/HelloWorld
+cd ~/Desktop/
+ldid -S HelloWorld.app/HelloWorld
 ```
 Copy Application To Device and Reload UI Cache:
 Open Terminal on the OSX system where the application was built.
 Change to the desktop directory where the application was copied and use the scp utility to copy the application to the device:
 ```applescript
-# cd ~/Desktop/
-# scp -r HelloWorld.app/ root@192.168.1.161:/Applications/
+cd ~/Desktop/
+scp -r HelloWorld.app/ root@192.168.1.161:/Applications/
 ```
 Connect to the device via SSH, login as the user 'mobile', rebuild the UI cache, and re-spring the device:
 ```applescript
-# ssh -l mobile 192.168.1.161
-# uicache
-# killall backboardd
+ssh -l mobile 192.168.1.161
+uicache
+killall backboardd
 ```
 Note: The backboardd process can be replaced with SpringBoard for iOS versions prior to 6.0. Using SpringBoard for iOS6+ will still work, but the screen will be dimmed. Pressing the power button once then waking the device back up will bring brightness back to the previous setting.
 
@@ -69,12 +69,18 @@ After performing the above steps, your application should now be visible on the 
 
 # Script to sign and sync App to iOS Device
 
+1. Open the __Build Phases__ tab of your project.
+2. Add the following script.
+3. Change the IP to your iPhone's IP address.
+4. Change the BUNDLE_ID to your iPhone's bundle Identifier.
+5. Install __Open__ from Cydia in order for the open command to work.
 
 ```applescript
 #!/bin/sh
 
 # Modify this to your device's IP address.
 IP="10.0.0.31"
+BUNDLE_ID="reitermarkus.Crystal-Ball"
     
 # Verify that the build is for iOS Device and not a Simulator.
 if [ "$NATIVE_ARCH" != "i386" ]; then
@@ -90,11 +96,11 @@ if [ "$NATIVE_ARCH" != "i386" ]; then
 
   ssh root@$IP "su -c uicache mobile"
 
-  ssh root@$IP "open reitermarkus.Crystal-Ball"
+  ssh root@$IP "open ${BUNDLE_ID}"
 
   # This part just creates create an OS X notification to let you know that the process is done.
   # You can get terminal-notifier from https://github.com/alloy/terminal-notifier.
-  /Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Build fertig" -message "${CFBundleIdentifier} wurde auf ${IP} installiert."
+  # /Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Build Complete" -message "${CFBundleIdentifier} installed on ${IP}."
 
 fi
 ```
