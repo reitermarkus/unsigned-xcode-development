@@ -35,6 +35,8 @@ PS: You only have to install __ldid__ once.
 4. Set the Build Destination to __iOS Device__.
 5. Build the application (⌘-B).
 
+## Upload the App manually to your iOS Device
+
 Add Required SHA1 Hashes To Application Binary:
 In the Xcode Project Navigator, expand the section "Products".
 Right-click the application binary (HelloWorld.app) and select "Show In Finder".
