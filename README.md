@@ -5,17 +5,17 @@ xcode-setup
 
 ## Disable Code Signing Requirement
 
-1. navigate to __/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS#.#.sdk/__
-2. open __SDKSettings.plist__
-3. expand the section `DefaultProperties`
-4. set the value of `CODE_SIGNING_REQUIRED` to `NO`
-5. restart Xcode
+1. Navigate to __/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS#.#.sdk/__.
+2. Open __SDKSettings.plist__.
+3. Expand the section `DefaultProperties`.
+4. Set the value of `CODE_SIGNING_REQUIRED` to `NO`.
+5. Restart Xcode.
 
 ## Install Saurik's ldid utility
 
-1. open Xcode preferences and select the __Downloads__ tab
-2. install the __Command Line Tools__
-3. open Terminal and execute the following commands:
+1. Open Xcode preferences and select the __Downloads__ tab.
+2. Install the __Command Line Tools__.
+3. Open Terminal and execute the following commands:
 ```applescript
 mkdir -p ~/Documents/Git/
 cd ~/Documents/Git/
@@ -26,25 +26,14 @@ git submodule update --init
 sudo cp ldid /usr/bin/
 ```
 
-Note: The above steps only need to be performed once. After Xcode is properly prepared and ldid is installed, only the following steps will need to be repeated for building unsigned applications and installing them to a device.
 
 
-Building An Unsigned Application In Xcode:
-Open the project in Xcode which is to be run on a non-provisioned iOS device.
-At the top of the Project Navigator, select the project.
-
-Select Project
-
-In the "Code Signing" section, select "Don't Code Sign" for "Code Signing Identity".
-
-Disable CodeSigning
-
-Ensure the Build Destination is set to "iOS Device".
-
-Build Destination
-
-
-Build the application (⌘-B).
+# Building An Unsigned Application In Xcode:
+1. Open the project in Xcode.
+2. In the Project Navigator, select the project.
+3. In the __Code Signing__ section, select __Don't Code Sign__ for __Code Signing Identity__.
+4. Set the Build Destination to __iOS Device__.
+5. Build the application (⌘-B).
 
 Add Required SHA1 Hashes To Application Binary:
 In the Xcode Project Navigator, expand the section "Products".
