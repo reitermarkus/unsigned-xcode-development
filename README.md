@@ -73,7 +73,7 @@ After performing the above steps, your application should now be visible on the 
 
 ## Prepare your iOS Device
 
-1. Install __OpenSSH__ and __Open__ from Cydia.
+1. Install __OpenSSH__, __Open__ and __CyDelete7__ from Cydia.
 2. Set up up a private key to ssh into your iOS Device. [(How-to)](http://www.priyaontech.com/2012/01/ssh-into-your-jailbroken-idevice-without-a-password/)
 
 PS: If it still asks for a password you might need to add the private key to your OS X Keychain like so:
