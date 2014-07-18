@@ -28,7 +28,7 @@ sudo cp ldid /usr/bin/
 
 PS: You only have to install __ldid__ once.
 
-# Building An Unsigned Application In Xcode:
+## Building An Unsigned Application in Xcode
 1. Open the project in Xcode.
 2. In the Project Navigator, select the project.
 3. In the __Code Signing__ section, select __Don't Code Sign__ for __Code Signing Identity__.
@@ -69,7 +69,7 @@ Note: The IP address shown in the above commands (192.168.1.161) should be repla
 After performing the above steps, your application should now be visible on the device's SpringBoard. I have read that the ldid command and scp procedure can be added to a script so it's automatically performed every time a build is completed in Xcode. Once I figure out how to do this, the above guide will be revised.
 
 
-# Script to sign and sync App to iOS Device
+## Script to sign and sync App to iOS Device
 
 1. Open the __Build Phases__ tab of your project.
 2. Add the following script.
