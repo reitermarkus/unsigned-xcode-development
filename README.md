@@ -26,6 +26,8 @@ git submodule update --init
 sudo cp ldid /usr/bin/
 ```
 
+PS: You only have to install __ldid_ once.
+
 # Building An Unsigned Application In Xcode:
 1. Open the project in Xcode.
 2. In the Project Navigator, select the project.
