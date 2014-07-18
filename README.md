@@ -1,7 +1,7 @@
 xcode-setup
 ===========
 
-#Preparing Xcode To Allow Building Unsigned iOS Applications & Installing ldid Utility
+#Preparing Xcode to Allow Building Unsigned iOS Applications & Installing ldid Utility
 
 ## Disable Code Signing Requirement
 
@@ -25,8 +25,6 @@ git submodule update --init
 ./make.sh
 sudo cp ldid /usr/bin/
 ```
-
-
 
 # Building An Unsigned Application In Xcode:
 1. Open the project in Xcode.
