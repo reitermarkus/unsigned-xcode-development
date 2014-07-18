@@ -73,8 +73,8 @@ After performing the above steps, your application should now be visible on the 
 
 1. Open the __Build Phases__ tab of your project.
 2. Add the following script.
-3. Change the IP to your iPhone's IP address.
-4. Change the BUNDLE_ID to your iPhone's bundle Identifier.
+3. Change the `IP` to your iPhone's IP address.
+4. Change the `BUNDLE_ID` to your iPhone's bundle Identifier.
 5. Install __Open__ from Cydia in order for the open command to work.
 
 ```applescript
