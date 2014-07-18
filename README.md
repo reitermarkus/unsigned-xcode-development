@@ -1,7 +1,5 @@
-xcode-setup
-===========
-
-#Preparing Xcode to Allow Building Unsigned iOS Applications & Installing ldid Utility
+Preparing Xcode to Allow Building Unsigned iOS Applications & Installing ldid Utility
+=====================================================================================
 
 ## Disable Code Signing Requirement
 
