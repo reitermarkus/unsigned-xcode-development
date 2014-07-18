@@ -110,7 +110,7 @@ if [ "$NATIVE_ARCH" != "i386" ]; then
 
   ssh root@$IP "open ${BUNDLE_ID}"
 
-  # This part just creates create an OS X notification to let you know that the process is done.
+  # This part just creates an OS X notification to let you know that the process is done.
   # You can get terminal-notifier from https://github.com/alloy/terminal-notifier.
   # /Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Build Complete" -message "${CFBundleIdentifier} installed on ${IP}."
 
