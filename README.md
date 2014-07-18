@@ -82,7 +82,7 @@ PS: If it still asks for a password you might need to add the private key to you
 ssh-add -K ~/.ssh/id_dsa
 ```
 
-## Script to sign and sync App to iOS Device
+## Add a Build script to sign and sync App to iOS Device automatically
 
 1. Open the __Build Phases__ tab of your project.
 2. Add the following script.
