@@ -96,7 +96,7 @@ ssh-add -K ~/.ssh/id_dsa
 IP="iPhone.local"
 
 # Verify that the build is for iOS Device and not a Simulator.
-if [ "$NATIVE_ARCH" != "i386" ]; then
+if [ "$NATIVE_ARCH" != "i386" ] && [ "$NATIVE_ARCH" != "x86_64" ]; then
 
   # Kill running instance and remove the app folder.
   ssh root@$IP "killall '${TARGETNAME}'; rm -rf '/Applications/${WRAPPER_NAME}'"
