@@ -87,7 +87,6 @@ fi
 ```
 
 
-
-    9. Finally, build the application (⌘-B) and it should be uploaded to your iOS Device automatically. (Your Device has to be unlocked in order for the app to be opened automatically.)
+  9. Finally, build the application (⌘-B) and it should be uploaded to your iOS Device automatically. (Your Device has to be unlocked in order for the app to be opened automatically.)
 
 Note: You have to do this for every project.
