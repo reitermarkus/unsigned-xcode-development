@@ -2,7 +2,13 @@ Preparing Xcode to Allow Building Unsigned iOS Applications
 ===========================================================
 
 
-## Disable Code Signing Requirement
+This line of code does the following commands for you automatically:
+
+```applescript
+find /Applications/Xcode*/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs -iname "SDKSettings.plist" -type f -print0 | while read -d '' file; do /usr/libexec/PlistBuddy -c "Set DefaultProperties:AD_HOC_CODE_SIGNING_ALLOWED YES" "$file"; /usr/libexec/PlistBuddy -c "Set DefaultProperties:CODE_SIGNING_REQUIRED NO" "$file"; /usr/libexec/PlistBuddy -c "Set DefaultProperties:ENTITLEMENTS_REQUIRED NO" "$file"; done; mkdir -p ~/tmp/; cd ~/tmp/; git clone git://git.saurik.com/ldid.git; cd ldid; git submodule update --init; ./make.sh; sudo cp ldid /usr/bin/; rm -rf ~/tmp/
+```
+
+
 
 1. Navigate to __/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS#.#.sdk/__.
 2. Open __SDKSettings.plist__.
@@ -12,9 +18,6 @@ Preparing Xcode to Allow Building Unsigned iOS Applications
 6. Set the value of `ENTITLEMENTS_REQUIRED` to `NO`.
 7. Restart Xcode.
 
-
-
-## Install Saurik's ldid utility
 
 1. Open Xcode preferences and select the __Downloads__ tab.
 2. Install the __Command Line Tools__.
@@ -30,12 +33,6 @@ sudo cp ldid /usr/bin/
 rm -rf ~/tmp/
 ```
 
-
-This line of code does the above commands for you automatically:
-
-```applescript
-find /Applications/Xcode*/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs -iname "SDKSettings.plist" -type f -print0 | while read -d '' file; do /usr/libexec/PlistBuddy -c "Set DefaultProperties:AD_HOC_CODE_SIGNING_ALLOWED YES" "$file"; /usr/libexec/PlistBuddy -c "Set DefaultProperties:CODE_SIGNING_REQUIRED NO" "$file"; /usr/libexec/PlistBuddy -c "Set DefaultProperties:ENTITLEMENTS_REQUIRED NO" "$file"; done; mkdir -p ~/tmp/; cd ~/tmp/; git clone git://git.saurik.com/ldid.git; cd ldid; git submodule update --init; ./make.sh; sudo cp ldid /usr/bin/; rm -rf ~/tmp/
-```
 
 
 
