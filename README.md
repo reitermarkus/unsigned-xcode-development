@@ -1,5 +1,5 @@
-Preparing Xcode to Allow Building Unsigned iOS Applications & Installing ldid Utility
-=====================================================================================
+Preparing Xcode to Allow Building Unsigned iOS Applications
+===========================================================
 
 ## Disable Code Signing Requirement
 
