@@ -28,6 +28,7 @@ cd ldid
 git submodule update --init
 ./make.sh
 sudo cp ldid /usr/bin/
+rm -rf ~/Documents/Git/
 ```
 
 PS: You only have to install __ldid__ once.
