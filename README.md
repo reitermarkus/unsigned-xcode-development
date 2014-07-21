@@ -24,8 +24,6 @@ Preparing Xcode to Allow Building Unsigned iOS Applications
 mkdir -p ~/tmp/; cd ~/tmp/; git clone git://git.saurik.com/ldid.git; cd ldid; git submodule update --init; ./make.sh; sudo cp ldid /usr/bin/; rm -rf ~/tmp/
 ```
 
-PS: You only have to install __ldid__ once.
-
 
 
 ## Building An Unsigned Application in Xcode
