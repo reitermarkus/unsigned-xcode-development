@@ -35,41 +35,6 @@ PS: You only have to install __ldid__ once.
 4. Set the Build Destination to __iOS Device__.
 5. Build the application (⌘-B).
 
-## Upload the App manually to your iOS Device
-
-Add Required SHA1 Hashes To Application Binary:
-In the Xcode Project Navigator, expand the section "Products".
-Right-click the application binary (HelloWorld.app) and select "Show In Finder".
-
-Show In Finder
-
-Copy the application binary to the desktop.
-Open Terminal on the OSX system where the application was built.
-Add the SHA1 hashes to the application binary:
-
-```applescript
-cd ~/Desktop/
-ldid -S HelloWorld.app/HelloWorld
-```
-Copy Application To Device and Reload UI Cache:
-Open Terminal on the OSX system where the application was built.
-Change to the desktop directory where the application was copied and use the scp utility to copy the application to the device:
-```applescript
-cd ~/Desktop/
-scp -r HelloWorld.app/ root@192.168.1.161:/Applications/
-```
-Connect to the device via SSH, login as the user 'mobile', rebuild the UI cache, and re-spring the device:
-```applescript
-ssh -l mobile 192.168.1.161
-uicache
-killall backboardd
-```
-Note: The backboardd process can be replaced with SpringBoard for iOS versions prior to 6.0. Using SpringBoard for iOS6+ will still work, but the screen will be dimmed. Pressing the power button once then waking the device back up will bring brightness back to the previous setting.
-
-Note: The IP address shown in the above commands (192.168.1.161) should be replaced with the IP address of the iOS device being used. This can be obtained within the iOS Settings app by tapping the arrow icon next to the WiFi Access Point the device is connected to. Before running the above commands, OpenSSH must be installed and enabled on the device.
-
-After performing the above steps, your application should now be visible on the device's SpringBoard. I have read that the ldid command and scp procedure can be added to a script so it's automatically performed every time a build is completed in Xcode. Once I figure out how to do this, the above guide will be revised.
-
 
 ## Prepare your iOS Device
 
