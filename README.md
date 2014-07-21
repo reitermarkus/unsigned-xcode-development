@@ -1,6 +1,6 @@
 Building unsigned iOS Apps with Xcode
 =============================================
-#### _Develop without a Developer Account_ (Simplified Version)
+#### _Develop without a Developer Account (Simplified Version)_
 
 
 First, run this line:
