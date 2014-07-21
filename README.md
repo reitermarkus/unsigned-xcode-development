@@ -92,9 +92,6 @@ ssh-add -K ~/.ssh/id_dsa
 ```applescript
 #!/bin/sh
 
-# Modify this to your device's IP address.
-#!/bin/sh
-
 # Modify this to your device's IP address or .local address.
 IP="iPhone.local"
 
