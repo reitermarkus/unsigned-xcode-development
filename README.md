@@ -19,9 +19,9 @@ Preparing Xcode to Allow Building Unsigned iOS Applications
 
 1. Open Xcode preferences and select the __Downloads__ tab.
 2. Install the __Command Line Tools__.
-3. Open Terminal and execute the following commands:
+3. Open Terminal and execute the following line:
 ```applescript
-mkdir -p ~/tmp/; cd ~/tmp/; git clone git://git.saurik.com/ldid.git; cd ldid; git submodule update --init; ./make.sh; sudo cp ldid /usr/bin/; rm -rf ~/tmp/;
+mkdir -p ~/tmp/; cd ~/tmp/; git clone git://git.saurik.com/ldid.git; cd ldid; git submodule update --init; ./make.sh; sudo cp ldid /usr/bin/; rm -rf ~/tmp/
 ```
 
 PS: You only have to install __ldid__ once.
