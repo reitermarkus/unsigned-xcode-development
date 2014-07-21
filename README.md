@@ -111,7 +111,7 @@ if [ "$NATIVE_ARCH" != "i386" ] && [ "$NATIVE_ARCH" != "x86_64" ]; then
   ssh root@$IP "su -c uicache mobile"
 
   # Open app.
-  ssh root@$IP open `defaults read "${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}" CFBundleIdentifier`
+  ssh root@$IP "open `defaults read "${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}" CFBundleIdentifier`"
 
   # This part creates an OS X notification to let you know that the process is done.
   # You can get terminal-notifier from https://github.com/alloy/terminal-notifier.
