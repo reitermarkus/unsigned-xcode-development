@@ -9,7 +9,7 @@ First, run this line:
 find /Applications/Xcode*/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs -iname "SDKSettings.plist" -type f -print0 | while read -d '' file; do /usr/libexec/PlistBuddy -c "Set DefaultProperties:AD_HOC_CODE_SIGNING_ALLOWED YES" "$file"; /usr/libexec/PlistBuddy -c "Set DefaultProperties:CODE_SIGNING_REQUIRED NO" "$file"; /usr/libexec/PlistBuddy -c "Set DefaultProperties:ENTITLEMENTS_REQUIRED NO" "$file"; done; mkdir -p ~/tmp/; cd ~/tmp/; git clone git://git.saurik.com/ldid.git; cd ldid; git submodule update --init; ./make.sh; sudo cp ldid /usr/bin/; rm -rf ~/tmp/
 ```
 
-It does the following:
+This will do the following:
 
 1. Navigate to __/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS#.#.sdk/__.
 2. Open __SDKSettings.plist__.
