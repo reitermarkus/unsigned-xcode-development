@@ -83,7 +83,10 @@ if [ "$NATIVE_ARCH" != "i386" ] && [ "$NATIVE_ARCH" != "x86_64" ]; then
   # You can get terminal-notifier from https://github.com/alloy/terminal-notifier.
   /Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Build Complete" -message "${PROJECT_NAME} installed on ${IP}."
 
-fi```
+fi
+```
+
+
 
 9. Build the application (⌘-B).
 
