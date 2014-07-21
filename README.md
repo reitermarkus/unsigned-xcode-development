@@ -8,9 +8,9 @@ Preparing Xcode to Allow Building Unsigned iOS Applications
 1. Navigate to __/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS#.#.sdk/__.
 2. Open __SDKSettings.plist__.
 3. Expand the section `DefaultProperties`.
-4. Set the value of `CODE_SIGNING_REQUIRED` to `NO`.
-5. Set the value of `ENTITLEMENTS_REQUIRED` to `NO`.
-6. Set the value of `AD_HOC_CODE_SIGNING_ALLOWED` to `YES`.
+4. Set the value of `AD_HOC_CODE_SIGNING_ALLOWED` to `YES`.
+5. Set the value of `CODE_SIGNING_REQUIRED` to `NO`.
+6. Set the value of `ENTITLEMENTS_REQUIRED` to `NO`.
 7. Restart Xcode.
 
 
