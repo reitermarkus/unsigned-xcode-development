@@ -16,9 +16,7 @@ find /Applications/Xcode*/Contents/Developer/Platforms/iPhoneOS.platform/Develop
 4. Set the value of `AD_HOC_CODE_SIGNING_ALLOWED` to `YES`.
 5. Set the value of `CODE_SIGNING_REQUIRED` to `NO`.
 6. Set the value of `ENTITLEMENTS_REQUIRED` to `NO`.
-7. Restart Xcode.
-
-8. Open Xcode preferences and select the __Downloads__ tab.
+7. Restart Xcode, open the __Downloads__ tab in Xcode preferences.
 9. Install the __Command Line Tools__.
 10. Open Terminal and execute the following commands:
 ```applescript
