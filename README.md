@@ -1,11 +1,6 @@
 Preparing Xcode to Allow Building Unsigned iOS Applications
 ===========================================================
 
-All in one line:
-
-```applescript
-find /Applications/Xcode*/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs -iname "SDKSettings.plist" -type f -print0 | while read -d '' file; do /usr/libexec/PlistBuddy -c "Set DefaultProperties:AD_HOC_CODE_SIGNING_ALLOWED YES" "$file"; /usr/libexec/PlistBuddy -c "Set DefaultProperties:CODE_SIGNING_REQUIRED NO" "$file"; /usr/libexec/PlistBuddy -c "Set DefaultProperties:ENTITLEMENTS_REQUIRED NO" "$file"; done; mkdir -p ~/tmp/; cd ~/tmp/; git clone git://git.saurik.com/ldid.git; cd ldid; git submodule update --init; ./make.sh; sudo cp ldid /usr/bin/; rm -rf ~/tmp/
-```
 
 ## Disable Code Signing Requirement
 
@@ -34,6 +29,14 @@ git submodule update --init
 sudo cp ldid /usr/bin/
 rm -rf ~/tmp/
 ```
+
+
+Here are the above commands in just one line:
+
+```applescript
+find /Applications/Xcode*/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs -iname "SDKSettings.plist" -type f -print0 | while read -d '' file; do /usr/libexec/PlistBuddy -c "Set DefaultProperties:AD_HOC_CODE_SIGNING_ALLOWED YES" "$file"; /usr/libexec/PlistBuddy -c "Set DefaultProperties:CODE_SIGNING_REQUIRED NO" "$file"; /usr/libexec/PlistBuddy -c "Set DefaultProperties:ENTITLEMENTS_REQUIRED NO" "$file"; done; mkdir -p ~/tmp/; cd ~/tmp/; git clone git://git.saurik.com/ldid.git; cd ldid; git submodule update --init; ./make.sh; sudo cp ldid /usr/bin/; rm -rf ~/tmp/
+```
+
 
 
 
