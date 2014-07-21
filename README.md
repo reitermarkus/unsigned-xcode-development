@@ -18,9 +18,9 @@ find /Applications/Xcode*/Contents/Developer/Platforms/iPhoneOS.platform/Develop
 6. Set the value of `ENTITLEMENTS_REQUIRED` to `NO`.
 7. Restart Xcode.
 
-1. Open Xcode preferences and select the __Downloads__ tab.
-2. Install the __Command Line Tools__.
-3. Open Terminal and execute the following commands:
+8. Open Xcode preferences and select the __Downloads__ tab.
+9. Install the __Command Line Tools__.
+10. Open Terminal and execute the following commands:
 ```applescript
 mkdir -p ~/tmp/
 cd ~/tmp/
