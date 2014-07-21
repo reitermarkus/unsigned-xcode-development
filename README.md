@@ -1,4 +1,4 @@
-Building unsigned iOS Applications with Xcode
+Building unsigned iOS Apps with Xcode
 =============================================
 #### _Develop without a Developer Account_
 
