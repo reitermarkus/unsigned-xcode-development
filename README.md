@@ -1,6 +1,8 @@
 Preparing Xcode to Allow Building Unsigned iOS Applications
 ===========================================================
 
+
+
 ## Disable Code Signing Requirement
 
 1. Navigate to __/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS#.#.sdk/__.
@@ -10,6 +12,8 @@ Preparing Xcode to Allow Building Unsigned iOS Applications
 5. Set the value of `ENTITLEMENTS_REQUIRED` to `NO`.
 6. Set the value of `AD_HOC_CODE_SIGNING_ALLOWED` to `YES`.
 7. Restart Xcode.
+
+
 
 ## Install Saurik's ldid utility
 
@@ -28,12 +32,15 @@ sudo cp ldid /usr/bin/
 
 PS: You only have to install __ldid__ once.
 
+
+
 ## Building An Unsigned Application in Xcode
 1. Open the project in Xcode.
 2. In the Project Navigator, select the project.
 3. In the __Code Signing__ section, select __Don't Code Sign__ for __Code Signing Identity__.
 4. Set the Build Destination to __iOS Device__.
 5. Build the application (⌘-B).
+
 
 
 ## Prepare your iOS Device
@@ -46,6 +53,8 @@ PS: If it still asks for a password you might need to add the private key to you
 ```applescript
 ssh-add -K ~/.ssh/id_dsa
 ```
+
+
 
 ## Add a Build Script
 
@@ -82,5 +91,4 @@ if [ "$NATIVE_ARCH" != "i386" ] && [ "$NATIVE_ARCH" != "x86_64" ]; then
   # You can get terminal-notifier from https://github.com/alloy/terminal-notifier.
   /Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Build Complete" -message "${PROJECT_NAME} installed on ${IP}."
 
-fi
-```
+fi```
