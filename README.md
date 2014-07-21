@@ -32,17 +32,6 @@ rm -rf ~/tmp/
 
 
 
-
-
-## Building An Unsigned Application in Xcode
-1. Open the project in Xcode.
-2. In the Project Navigator, select the project.
-3. In the __Code Signing__ section, select __Don't Code Sign__ for __Code Signing Identity__.
-4. Set the Build Destination to __iOS Device__.
-5. Build the application (⌘-B).
-
-
-
 ## Prepare your iOS Device
 
 1. Install __OpenSSH__, __Open__ and __CyDelete7__ from Cydia.
@@ -56,12 +45,15 @@ ssh-add -K ~/.ssh/id_dsa
 
 
 
-## Add a Build Script
-
-1. Open the __Build Phases__ tab of your project.
-2. Add the following script.
-3. Change the `IP` to your iPhone's IP address.
-4. Change the `BUNDLE_ID` to your iPhone's bundle Identifier.
+## Building An Unsigned Application in Xcode
+1. Open the project in Xcode.
+2. In the Project Navigator, select the project.
+3. In the __Code Signing__ section, select __Don't Code Sign__ for __Code Signing Identity__.
+4. Set the Build Destination to __iOS Device__.
+5. Open the __Build Phases__ tab of your project.
+6. Add the following script.
+7. Change the `IP` to your iPhone's IP address.
+8. Change the `BUNDLE_ID` to your iPhone's bundle Identifier.
 
 ```applescript
 #!/bin/sh
@@ -92,3 +84,7 @@ if [ "$NATIVE_ARCH" != "i386" ] && [ "$NATIVE_ARCH" != "x86_64" ]; then
   /Applications/terminal-notifier.app/Contents/MacOS/terminal-notifier -title "Build Complete" -message "${PROJECT_NAME} installed on ${IP}."
 
 fi```
+
+9. Build the application (⌘-B).
+
+Note: You have to do this for every project.
