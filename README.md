@@ -35,7 +35,7 @@ rm -rf ~/tmp/
 
 ## Prepare your iOS Device
 
-1. Install __OpenSSH__, __Open__ and __CyDelete7__ from Cydia.
+1. Install __ByPass__, __CyDelete7__, __Open__ and __OpenSSH__ from Cydia.
 2. Set up up a private key to ssh into your iOS Device. [(How-to)](http://www.priyaontech.com/2012/01/ssh-into-your-jailbroken-idevice-without-a-password/)
 
 PS: If it still asks for a password you might need to add the private key to your OS X Keychain like so:
@@ -76,6 +76,9 @@ if [ "$NATIVE_ARCH" != "i386" ] && [ "$NATIVE_ARCH" != "x86_64" ]; then
 
   # Clear UI cache to show app on homescreen.
   ssh root@$IP su -c uicache mobile
+
+  # Unlock device.
+  ssh root@$IP activator send com.bd452.bypass
 
   # Open app.
   ssh root@$IP open `defaults read "${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}" CFBundleIdentifier`
