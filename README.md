@@ -5,7 +5,7 @@ Building unsigned iOS Apps with Xcode
 
 First, run this line:
 
-```applescript
+```shellscript
 find /Applications/Xcode*/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs -iname "SDKSettings.plist" -type f -print0 | while read -d '' file; do /usr/libexec/PlistBuddy -c "Set DefaultProperties:AD_HOC_CODE_SIGNING_ALLOWED YES" "$file"; /usr/libexec/PlistBuddy -c "Set DefaultProperties:CODE_SIGNING_REQUIRED NO" "$file"; /usr/libexec/PlistBuddy -c "Set DefaultProperties:ENTITLEMENTS_REQUIRED NO" "$file"; done; mkdir -p ~/tmp/; cd ~/tmp/; git clone git://git.saurik.com/ldid.git; cd ldid; git submodule update --init; ./make.sh; sudo cp ldid /usr/bin/; rm -rf ~/tmp/
 ```
 
@@ -20,7 +20,7 @@ This will do the following:
 7. Restart Xcode, open the __Downloads__ tab in Xcode preferences.
 9. Install the __Command Line Tools__.
 10. Open Terminal and execute the following commands:
-```applescript
+```bashscript
 mkdir -p ~/tmp/
 cd ~/tmp/
 git clone git://git.saurik.com/ldid.git
